@@ -45,6 +45,8 @@ call plug#begin('C:/Program Files/Vim/vimfiles/plugged')
 " Add your plugins below:
 Plug 'lervag/vimtex'
 
+Plug 'arzg/vim-colors-xcode'
+
 Plug 'sirver/ultisnips'
 
 call plug#end()
@@ -52,7 +54,8 @@ call plug#end()
 " VimTeX configuration with Delek theme
 filetype plugin indent on
 syntax enable
-colorscheme Delek
+"colorscheme Delek
+colorscheme xcodelight
 set termguicolors
 
 let g:vimtex_view_method = 'general'
@@ -68,6 +71,22 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
+" VimTeX highlight groups
+hi texCmd guifg=#ad3da4 guibg=NONE gui=NONE ctermfg=127 ctermbg=NONE cterm=NONE
+hi! link texMathEnvArgName texEnvArgName
+hi! link texMathZone LocalIdent
+hi! link texMathZoneEnv texMathZone
+hi! link texMathZoneEnvStarred texMathZone
+hi! link texMathZoneX texMathZone
+hi! link texMathZoneXX texMathZone
+hi! link texMathZoneEnsured texMathZone
+
+" Small tweaks
+hi! link QuickFixLine Normal
+hi! link qfLineNr Normal
+hi! link EndOfBuffer LineNr
+hi! link Conceal LocalIdent
 
 " Map Ctrl+S in normal and insert modes to save the current file
 nnoremap <C-s> :w<CR>
