@@ -18,19 +18,6 @@ snippet template "Basic template" b
 \usepackage[capitalise]{cleveref}
 \usepackage[msc-links, alphabetic]{amsrefs}
 
-%function name with domain and codomain
-\newcommand*{\map}[3]{#1 \colon #2 \to #3} 
-
-%absolute value
-\newcommand*{\abs}[1]{\left\vert #1 \right\vert} 
-
-%inner product
-\newcommand*{\ip}[2]{\left\langle #1 , #2 \right\rangle} 
-
-%norm: If you want a subscript to the norm, then write it as 
-%the first argument in [] (e.g. \norm[2]{f} to print l^2 norm of f)
-\newcommand*{\norm}[2][]{\left\Vert #2 \right\Vert_{#1}} 
-
 \DeclareMathOperator{\vol}{vol}
 \newcommand{\blue}[1]{{\color{blue} #1}}
 \newcommand{\red}[1]{{\color{red} #1}}
@@ -499,12 +486,7 @@ endsnippet
 
 context "math()"
 snippet norm "norm" iA
-\norm{$1}$0
-endsnippet
-
-context "math()"
-snippet normsub "norm" iA
-\norm[$2]{$1}$0
+\left\Vert $1 \right\Vert
 endsnippet
 
 priority 100
@@ -679,18 +661,18 @@ snippet bigfun "Big function" iA
 endsnippet
 
 context "math()"
-snippet map "function" iA
-\map{$1}{$2}{$3}
+snippet smfun "function" iA
+$1 \colon $2 \to $3
 endsnippet
 
 context "math()"
 snippet ip "inner product" iA
-\ip{$1}{$2}
+\left\langle $1, $2 \right\rangle
 endsnippet
 
 context "math()"
-snippet abs "absolute value" iA
-\abs{$1}
+snippet modulus "absolute value" iA
+\left\vert $1 \right\vert
 endsnippet
 
 snippet cvec "column vector" iA
