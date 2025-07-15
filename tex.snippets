@@ -208,7 +208,6 @@ snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
-
 snippet sympy "sympyblock " w
 sympy $1 sympy$0
 endsnippet
@@ -485,8 +484,13 @@ snippet ** "cdot" iA
 endsnippet
 
 context "math()"
+snippet bignorm "norm" iA
+\left\lVert $1 \right\rVert
+endsnippet
+
+context "math()"
 snippet norm "norm" iA
-\left\Vert $1 \right\Vert
+\lVert $1 \rVert
 endsnippet
 
 priority 100
@@ -502,13 +506,23 @@ snippet dint "integral" wA
 endsnippet
 
 context "math()"
-snippet intdx "integration" wA
-\int_{$1}^{$2} $3\, \mathrm{d}x
+snippet singleint "integration" wA
+\int_{$1}^{$2} $3\, \mathrm{d}$4
+endsnippet
+
+context "math()"
+snippet lowint "integration" wA
+\int_{$1} $2\, \mathrm{d}$3
 endsnippet
 
 context "math()"
 snippet doubleint "double integration" wA
-\int_{$1}^{$2} \int_{$3}^{[$4} $5\, \mathrm{d}x\, \mathrm{d}y
+\int_{$1}^{$2} \int_{$3}^{[$4} $5\, \mathrm{d}$6\, \mathrm{d}$7
+endsnippet
+
+context "math()"
+snippet low2int "double integration" wA
+\int_{$1} \int_{$2} $3\, \mathrm{d}$4\, \mathrm{d}$5
 endsnippet
 
 priority 200
@@ -631,7 +645,6 @@ snippet <> "hokje" iA
 \diamond 
 endsnippet
 
-
 context "math()"
 snippet '(?<!i)sts' "text subscript" irA
 _\text{$1} $0
@@ -667,12 +680,22 @@ endsnippet
 
 context "math()"
 snippet ip "inner product" iA
-\left\langle $1, $2 \right\rangle
+\langle $1,$2\rangle
+endsnippet
+
+context "math()"
+snippet bigip "inner product" iA
+\left\langle $1,$2\right\rangle
 endsnippet
 
 context "math()"
 snippet modulus "absolute value" iA
-\left\vert $1 \right\vert
+\lvert $1 \rvert
+endsnippet
+
+context "math()"
+snippet bigmod "absolute value" iA
+\left\lvert $1 \right\rvert
 endsnippet
 
 snippet cvec "column vector" iA
@@ -706,7 +729,6 @@ endsnippet
 snippet letw "let omega" iA
 Let $\Omega \subset \C$ be open.
 endsnippet
-
 
 snippet HH "H" iA
 \mathbb{H}
