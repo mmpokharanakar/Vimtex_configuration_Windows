@@ -18,7 +18,6 @@ snippet template "Basic template" b
 \usepackage[capitalise]{cleveref}
 \usepackage[msc-links, alphabetic]{amsrefs}
 
-\DeclareMathOperator{\vol}{vol}
 \newcommand{\blue}[1]{{\color{blue} #1}}
 \newcommand{\red}[1]{{\color{red} #1}}
 
@@ -109,6 +108,12 @@ snippet lem "Lemma" bA
 \begin{lemma}
 	$1
 \end{lemma}
+endsnippet
+
+snippet proof "Proof" bA
+\begin{proof}
+	$1
+\end{proof}
 endsnippet
 
 snippet defn "Definition" bA
@@ -460,6 +465,11 @@ snippet mrm "mathrm" iA
 endsnippet
 
 context "math()"
+snippet mbf "mathbf" iA
+\mathbf{$1}$0
+endsnippet
+
+context "math()"
 snippet mbb "mathbb" iA
 \mathbb{$1}$0
 endsnippet
@@ -517,11 +527,11 @@ endsnippet
 
 context "math()"
 snippet doubleint "double integration" wA
-\int_{$1}^{$2} \int_{$3}^{[$4} $5\, \mathrm{d}$6\, \mathrm{d}$7
+\int_{$1}^{$2} \int_{$3}^{$4} $5\, \mathrm{d}$6\, \mathrm{d}$7
 endsnippet
 
 context "math()"
-snippet low2int "double integration" wA
+snippet dolowint "double integration" wA
 \int_{$1} \int_{$2} $3\, \mathrm{d}$4\, \mathrm{d}$5
 endsnippet
 
